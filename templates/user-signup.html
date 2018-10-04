@@ -14,19 +14,22 @@
       {% endif %}
       <br>
       Password: <br>
-      <input type="text" name="password" />
+      <input type="password" name="password" />
+      {% if password %}
+      getpass.getpass(prompt='Password: ', stream=None)
+      {% endif %}
       {% if error2 %}
         <span class='error'>{{ error2 }}</span>
       {% endif %}
       <br>
       Verify Password:<br>
-      <input type="text" name="verify-passwd" /> 
+      <input type="password" name="verify-passwd" /> 
       {% if error3 %}
         <span class='error'>{{ error3 }}</span>
       {% endif %}
       <br>
       Email (Optional):<br>
-      <input type="email" name="email" />
+      <input type="text" name="email" />
       {% if error4 %}
         <span class='error'>{{ error4 }}</span>
       {% endif %}
