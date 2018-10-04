@@ -40,12 +40,10 @@ def validate_fields():
 
 @app.route("/")
 def index():
-    text = request.form['text']
-    processed_text = text.upper()
     encoded_error1 = request.args.get("error1")
     encoded_error2 = request.args.get("error2")
     encoded_error3 = request.args.get("error3")
     encoded_error4 = request.args.get("error4")
-    return render_template('user-signup.html', processed_text, error1=encoded_error1, error2=encoded_error2, error3=encoded_error3, error4=encoded_error4)
+    return render_template('user-signup.html', error1=encoded_error1, error2=encoded_error2, error3=encoded_error3, error4=encoded_error4)
 
 app.run()
