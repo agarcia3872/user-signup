@@ -8,7 +8,11 @@
     <form action="/validate-fields" method="post">
       <h1>Signup</h1>
       Username: <br>
-      <input type="text" name="username"/>
+      {% if username %}
+      <input type="text" name="username" value="{{ username }}"/>
+      {% else %}
+      <input type="text" name="username" />
+      {% endif %}
       {% if error1 %}
         <span class='error'>{{ error1 }}</span>
       {% endif %}
@@ -29,7 +33,12 @@
       {% endif %}
       <br>
       Email (Optional):<br>
+      {% if email %}
+      <input type="text" name="email" value="{{ email }}"/>
+      {% else %}
       <input type="text" name="email" />
+      {% endif %}
+
       {% if error4 %}
         <span class='error'>{{ error4 }}</span>
       {% endif %}
