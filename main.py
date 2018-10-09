@@ -13,12 +13,13 @@ def validate_fields():
     email = request.form['email']
     isError = False
     error_string = "/?" 
+    SavedInputString = " "
 
     if not username:
         error1 = "That's not a valid username"
         error_string = error_string + "error1=" + error1 + "&"
         isError = True
-        return redirect("/?error=" + error1 +"&username=" + username)
+        #return redirect("/?error1=" + error1 + "&username=" + username)
         #return redirect("/?error=" + error)
     else:
         SavedInputString = "&username=" + username
@@ -27,13 +28,13 @@ def validate_fields():
         error2 = "That's not a valid password"
         error_string = error_string + "error2=" + error2 + "&"
         isError = True
-       # return redirect("/?error=" + error)
-
+        #return redirect("/?error2=" + error2)
+        
     if not verify_passwd or verify_passwd == " " or password != verify_passwd:
         error3 = "Passwords do not match"
         error_string = error_string + "error3=" + error3 + "&"
         isError = True
-        #return redirect("/?error=" + error)
+        #return redirect("/?error3=" + error3)
 
     if not email:
         email
@@ -41,6 +42,7 @@ def validate_fields():
         error4 = "That's not a valid email"
         error_string = error_string + "error4=" + error4 + "&"
         isError= True
+        #return redirect("/?error4=" + error4)
     else:
         SavedInputString =  SavedInputString + "&email=" + email
 
