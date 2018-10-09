@@ -18,7 +18,7 @@ def validate_fields():
         error1 = "That's not a valid username"
         error_string = error_string + "error1=" + error1 + "&"
         isError = True
-        return redirect("/?error=" + error2 +"&username=" + username)
+        return redirect("/?error=" + error1 +"&username=" + username)
         #return redirect("/?error=" + error)
     else:
         SavedInputString = "&username=" + username
